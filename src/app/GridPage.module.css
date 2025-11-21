@@ -1,0 +1,86 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 100vh;
+    padding: 2rem;
+    padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 4rem;
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.backLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: all 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.backLink:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.loadMore {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.loadMoreButton {
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    background: white;
+    color: black;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.loadMoreButton:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+.loadMoreButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}

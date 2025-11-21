@@ -1,0 +1,95 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 768px) {
+    .title {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.scrollContainer {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 3rem;
+    /* Space for hover scale */
+    padding-top: 1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    scroll-behavior: smooth;
+    scroll-padding-left: 1rem;
+
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollContainer::-webkit-scrollbar {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .scrollContainer {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.spacer {
+    width: 2rem;
+    flex-shrink: 0;
+}
+
+.seeMoreCard {
+    position: relative;
+    flex-shrink: 0;
+    width: var(--card-width, 200px);
+    aspect-ratio: 2/3;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    text-decoration: none;
+}
+
+.seeMoreCard:hover {
+    background: var(--glass-bg-hover);
+    transform: scale(var(--scale-hover));
+    border-color: white;
+}
+
+.seeMoreIcon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.seeMoreText {
+    font-weight: 600;
+    font-size: 1.125rem;
+}

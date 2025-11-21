@@ -1,0 +1,81 @@
+.cardWrapper {
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    width: var(--card-width, 200px);
+}
+
+.cardWrapper:hover {
+    z-index: 50;
+}
+
+.cardInner {
+    position: relative;
+    aspect-ratio: 2/3;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(var(--glass-blur));
+    transition: all 0.5s ease;
+}
+
+.cardWrapper:hover .cardInner {
+    transform: scale(var(--scale-hover));
+    border-color: var(--glass-bg-hover);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.posterImage {
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.cardWrapper:hover .posterImage {
+    opacity: 0.8;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent, transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.cardWrapper:hover .overlay {
+    opacity: 1;
+}
+
+.info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    opacity: 0;
+    transition: all 0.5s ease;
+    transform: translateY(1rem);
+}
+
+.cardWrapper:hover .info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.title {
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.25rem;
+}
+
+.year {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+}
